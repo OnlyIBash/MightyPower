@@ -1,0 +1,2 @@
+# MightyPower
+Incremental Game
