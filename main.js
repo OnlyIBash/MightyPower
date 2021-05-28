@@ -29,24 +29,12 @@ var gameData = {
     gameData.power -= gameData.strangeFluidCost
     gameData.powerPerClick += gameData.strangeFluidBonus
     gameData.strangeFluidBonus += 2
-    gameData.strangeFluidCost *= 2.5
+    gameData.strangeFluidCost = Math.ceil(gameData.strangeFluidCost * 2.5)
     document.getElementById("powerGot").innerHTML = gameData.power + " Power Got"
     document.getElementById("strangeFluidUpgrade").innerHTML = "Buy a strange muscle fluid (Currently Level " + gameData.powerPerClick + ") Cost: " + gameData.strangeFluidCost + " Power"
     document.getElementById("showPowerPerClick").innerHTML = gameData.powerPerClick + " Power gained per Click"
     }
   }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*
   var saveGameLoop = window.setInterval(function() {
