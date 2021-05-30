@@ -8,6 +8,7 @@ ul {
   
   li {
     float: left;
+    text-indent: 10px;
   }
   
   li a {
@@ -28,6 +29,14 @@ ul {
 
   .highlight {
   background-color: crimson;
+  }
+
+  .colorPower {
+    background-color: darkgoldenrod;
+  }
+
+  .colorPerClick {
+    background-color: darkolivegreen;
   }
 
   .hidden {

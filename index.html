@@ -7,23 +7,35 @@
   </head>
   <script src="main.js" charset="utf-8" type="text/javascript"></script>
   <script src="unlocks.js" charset="utf-8" type="text/javascript"></script>
+  <script src="genericUpgrades.js" charset="utf-8" type="text/javascript"></script>
+  <script src="automatedPowerFormula.js" charset="utf-8" type="text/javascript"></script>
   <body style="background-color:black;">
 
     <ul>
-      <li><a id="indexSite" class="active" onclick="onClickGame();">Power</a></li>
+      <li><p style="color:white" id="powerGot" class="colorPower">0 Power got  </p></li>
+      <li><p style="color:white" id="showPowerPerClick" class="colorPerClick">1 Power gained per Click</p></li>
+      <li><p style="color:white" id="showPowerPerSecond" class="colorPerClick hidden">0 Power gained per Second</p></li>
+
+    </ul>
+
+    <ul>
+
+      <li><a id="gameSite" class="active" onclick="onClickGame();">Power</a></li>
       <li><a id="upgradesSite" onclick="onClickUpgrades();">Upgrades</a></li>
       <li><a id="prestigeSite" onclick="onClickPrestige();">Prestige</a></li>
     </ul>
 
-    <div id="gameView" >
-      <p style="color:white" id="powerGot">0 Power got</p>
-      <p style="color:white" id="showPowerPerClick">1 Power gained per Click</p>
-      <button onclick="getPower()">Get more Power</button>
+    <div id="gameView">
+      <br></br>
+      <button onclick="getPower()"> Get more Power</button>
+      <p style="color:white" id="textAutomatedPowerGain" class="hidden"> Whut ? Automated power gain ? YES  </p>
+      <button onclick="buyTier1Auto()" id="tier1BuildingButton" class="hidden"> Buy an automated Injector for Hormones, it will costs you only 50 Powa</button>
+      <p style="color:white" id="tier1BuildingText" class="hidden"> Wow you now have 0 Auto Injectors which produce 0 Power!  </p>
     </div>
 
     <div id="upgradesView" class="hidden">
       <br><button onclick="buyPowerPerClick()" id="perClickUpgrade" class="hidden">Strength the muscles (Currently Level 1) Cost: 10 Power</button>
-      <br><button onclick="buySrangeMuscleFluid()" id="strangeFluidUpgrade" class="hidden"> Buy a strange muscle fluid (Currently Level 1) Cost: Power 30</button>
+      <br><button onclick="buyStrangeMuscleFluid()" id="strangeFluidUpgrade" class="hidden"> Buy a strange muscle fluid (Currently Level 1) Cost: Power 30</button>
     </div>
 
     <div id="prestigeView" class="hidden">
