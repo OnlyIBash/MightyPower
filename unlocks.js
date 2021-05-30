@@ -19,12 +19,21 @@ function genericUpgrade2(power){
     }
 }
 
-function automatedUpdates(power){
+function unlockTier1Building1(power){
     if (power >= 50 && automatedUpdatesHighlight===false){
         document.getElementById("textAutomatedPowerGain").classList.remove("hidden");
         document.getElementById("tier1BuildingButton").classList.remove("hidden");
         document.getElementById("tier1BuildingText").classList.remove("hidden");
         document.getElementById("showPowerPerSecond").classList.remove("hidden");
+        setHighlightGame();
+        automatedUpdatesHighlight===true;
+    }
+}
+
+function unlockTier1Upgrade1(power){
+    if (power >= 100 && automatedUpdatesHighlight===false){
+        document.getElementById("upgrade1Tier1Button").classList.remove("hidden");
+        document.getElementById("upgrade1Tier1Text").classList.remove("hidden");
         setHighlightGame();
         automatedUpdatesHighlight===true;
     }

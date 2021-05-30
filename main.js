@@ -50,7 +50,8 @@ function getPower() {
   document.getElementById("showPowerPerClick").innerHTML = gameData.powerPerClick + " Power gained per Click";   
   genericUpgrade1(gameData.power);
   genericUpgrade2(gameData.power);
-  automatedUpdates(gameData.power);
+  unlockTier1Building1(gameData.power);
+  unlockTier1Upgrade1(gameData.power);
 }
 
 
