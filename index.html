@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="main.css">
   </head>
   <script src="main.js" charset="utf-8" type="text/javascript"></script>
+  <script src="unlocks.js" charset="utf-8" type="text/javascript"></script>
   <body style="background-color:black;">
 
     <ul>
@@ -14,22 +15,19 @@
       <li><a id="prestigeSite" onclick="onClickPrestige();">Prestige</a></li>
     </ul>
 
-    <div id="gameView">
+    <div id="gameView" >
       <p style="color:white" id="powerGot">0 Power got</p>
       <p style="color:white" id="showPowerPerClick">1 Power gained per Click</p>
       <button onclick="getPower()">Get more Power</button>
     </div>
 
-    <div id="upgradesView" >
-      <br><button onclick="buyPowerPerClick()" id="perClickUpgrade">Strength the muscles (Currently Level 1) Cost: 10 Power</button>
-      <br><button onclick="buySrangeMuscleFluid()" id="strangeFluidUpgrade"> Buy a strange muscle fluid (Currently Level 1) Cost: Power 30</button>
+    <div id="upgradesView" class="hidden">
+      <br><button onclick="buyPowerPerClick()" id="perClickUpgrade" class="hidden">Strength the muscles (Currently Level 1) Cost: 10 Power</button>
+      <br><button onclick="buySrangeMuscleFluid()" id="strangeFluidUpgrade" class="hidden"> Buy a strange muscle fluid (Currently Level 1) Cost: Power 30</button>
     </div>
 
     <div id="prestigeView" class="hidden">
-
     </div>
-
-
 
   </body>
 </html>

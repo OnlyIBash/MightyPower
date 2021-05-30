@@ -26,6 +26,10 @@ ul {
     background-color: #04AA6D;
   }
 
+  .highlight {
+  background-color: crimson;
+  }
+
   .hidden {
     display: none;
   }

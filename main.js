@@ -1,3 +1,4 @@
+
 var gameData = {
     power: 0,
     powerPerClick: 1,
@@ -7,60 +8,72 @@ var gameData = {
     Update: 0
   }
 
-  function onClickGame() {
+function onClickGame() {
     hideAll();
     document.getElementById("indexSite").classList.add("active");
     document.getElementById("gameView").classList.remove("hidden");
+
   }
 
-  function onClickUpgrades() {
+function onClickUpgrades() {
     hideAll();
     document.getElementById("upgradesSite").classList.add("active");
     document.getElementById("upgradesView").classList.remove("hidden");
+
   }
 
-  function onClickPrestige() {
+function onClickPrestige() {
     hideAll();
     document.getElementById("prestigeSite").classList.add("active");
-    document.getElementById("PrestigeView").classList.remove("hidden");
+    document.getElementById("prestigeView").classList.remove("hidden");
+
   }
-  function hideAll(){
-    document.getElementById("indexSite").classList.remove("active");
-    document.getElementById("upgradesSite").classList.remove("active");
-    document.getElementById("prestigeSite").classList.remove("active");
+
+function hideAll(){
+    document.getElementById("indexSite").classList.remove("active","highlight");
+    document.getElementById("upgradesSite").classList.remove("active","highlight");
+    document.getElementById("prestigeSite").classList.remove("active","highlight");
 
     document.getElementById("gameView").classList.add("hidden");
     document.getElementById("upgradesView").classList.add("hidden");
-    document.getElementById("prestigeView").classList.add("hidden");
+    document.getElementById("prestigeView").classList.add("hidden"); 
+  }
+
+function setHighlightUpgrades() {
+    document.getElementById("upgradesSite").classList.add("highlight");
   }
 
 
-  function getPower() {
-    gameData.power += gameData.powerPerClick
-    document.getElementById("powerGot").innerHTML = gameData.power + " Power got"
-    document.getElementById("showPowerPerClick").innerHTML = gameData.powerPerClick + " Power gained per Click"
+function getPower() {
+    gameData.power += gameData.powerPerClick;
+    document.getElementById("powerGot").innerHTML = gameData.power + " Power got";
+    document.getElementById("showPowerPerClick").innerHTML = gameData.powerPerClick + " Power gained per Click";
+    
+    genericUpgrade1(gameData.power);
+    genericUpgrade2(gameData.power);
+
   }
 
-  function buyPowerPerClick() {
+function buyPowerPerClick() {
     if (gameData.power >= gameData.powerPerClickCost) {
-      gameData.power -= gameData.powerPerClickCost
-      gameData.powerPerClick += 1
-      gameData.powerPerClickCost *= 2
-      document.getElementById("powerGot").innerHTML = gameData.power + " Power Got"
-      document.getElementById("perClickUpgrade").innerHTML = "Strength the muscles (Currently Level " + gameData.powerPerClick + ") Cost: " + gameData.powerPerClickCost + " Power"
-      document.getElementById("showPowerPerClick").innerHTML = gameData.powerPerClick + " Power gained per Click"
+      gameData.power -= gameData.powerPerClickCost;
+      gameData.powerPerClick += 1;
+      gameData.powerPerClickCost *= 2;
+      document.getElementById("powerGot").innerHTML = gameData.power + " Power Got";
+      document.getElementById("perClickUpgrade").innerHTML = "Strength the muscles (Currently Level " + gameData.powerPerClick + ") Cost: " + gameData.powerPerClickCost + " Power";
+      document.getElementById("showPowerPerClick").innerHTML = gameData.powerPerClick + " Power gained per Click";
     }
   }
 
-  function buySrangeMuscleFluid() {
+function buySrangeMuscleFluid() {
     if(gameData.power >= gameData.strangeFluidCost) {
-    gameData.power -= gameData.strangeFluidCost
-    gameData.powerPerClick += gameData.strangeFluidBonus
-    gameData.strangeFluidBonus += 2
-    gameData.strangeFluidCost = Math.ceil(gameData.strangeFluidCost * 2.5)
-    document.getElementById("powerGot").innerHTML = gameData.power + " Power Got"
-    document.getElementById("strangeFluidUpgrade").innerHTML = "Buy a strange muscle fluid (Currently Level " + gameData.powerPerClick + ") Cost: " + gameData.strangeFluidCost + " Power"
-    document.getElementById("showPowerPerClick").innerHTML = gameData.powerPerClick + " Power gained per Click"
+    gameData.power -= gameData.strangeFluidCost;
+    gameData.powerPerClick += gameData.strangeFluidBonus;
+    gameData.strangeFluidBonus += 2;
+    gameData.strangeFluidCost = Math.ceil(gameData.strangeFluidCost * 2.5);
+    document.getElementById("powerGot").innerHTML = gameData.power + " Power Got";
+    document.getElementById("strangeFluidUpgrade").innerHTML = "Buy a strange muscle fluid (Currently Level " + gameData.powerPerClick + ") Cost: " + gameData.strangeFluidCost + " Power";
+    document.getElementById("showPowerPerClick").innerHTML = gameData.powerPerClick + " Power gained per Click";
     }
   }
 
