@@ -7,6 +7,34 @@ var gameData = {
     Update: 0
   }
 
+  function onClickGame() {
+    hideAll();
+    document.getElementById("indexSite").classList.add("active");
+    document.getElementById("gameView").classList.remove("hidden");
+  }
+
+  function onClickUpgrades() {
+    hideAll();
+    document.getElementById("upgradesSite").classList.add("active");
+    document.getElementById("upgradesView").classList.remove("hidden");
+  }
+
+  function onClickPrestige() {
+    hideAll();
+    document.getElementById("prestigeSite").classList.add("active");
+    document.getElementById("PrestigeView").classList.remove("hidden");
+  }
+  function hideAll(){
+    document.getElementById("indexSite").classList.remove("active");
+    document.getElementById("upgradesSite").classList.remove("active");
+    document.getElementById("prestigeSite").classList.remove("active");
+
+    document.getElementById("gameView").classList.add("hidden");
+    document.getElementById("upgradesView").classList.add("hidden");
+    document.getElementById("prestigeView").classList.add("hidden");
+  }
+
+
   function getPower() {
     gameData.power += gameData.powerPerClick
     document.getElementById("powerGot").innerHTML = gameData.power + " Power got"
